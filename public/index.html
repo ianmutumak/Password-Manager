@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            text-align: center;
+            color: green;
+        }
+        #passwords {
+            margin-top: 20px;
+            color: #333;
+        }
+        #passwordStrength {
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Manager</h1>
+        <form id="password-form">
+            <input id="password" type="password" placeholder="Enter master password" />
+            <button id="initializeBtn" type="button">Initialize</button>
+        </form>
+
+        <form id="set-password-form">
+            <input id="site" type="text" placeholder="Enter site name" />
+            <input id="sitePassword" type="password" placeholder="Enter site password" />
+            <div id="passwordStrength"></div>
+            <button id="setPasswordBtn" type="button">Save Password</button>
+        </form>
+
+        <form id="get-password-form">
+            <input id="getSite" type="text" placeholder="Enter site name to retrieve password" />
+            <button id="getPasswordBtn" type="button">Get Password</button>
+        </form>
+
+        <button id="viewPasswordsBtn" type="button">View All Passwords</button>
+        <div id="passwords"></div>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="lib.js"></script>
+</body>
+</html>
